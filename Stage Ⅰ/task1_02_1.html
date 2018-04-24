@@ -129,29 +129,44 @@
 
 		<aside>
 			<h3>这里以后是一个侧栏，这是侧栏的标题</h3>
-			<form>
-				<label for="email">请输入邮箱地址：</label><input type="text" placeholder="这是一个文本输入框"/>
-				<p>邮箱地址请按要求格式输入</p>
-				<label for="password">请输入密码：</label><input type="password" placeholder="这是一个文本输入框"/><span style="margin-left: 5px;">
-				<label for="repassword">请重复输入密码：</label><input type="password" placeholder="这是一个文本输入框"/>
-				<p>密码请为6-16位英文数字</p>
-				<label for="gender">性别：</label>
-				<input type="radio" checked>男</input><input type="radio">女</input>
-				<label for="city">城市：</label>
-				<select>
-					<option value="bj">北京</option>
-					<option value="sh">上海</option>
-					<option value="gz">广州</option>
-					<option value="sz">深圳</option>
-				</select>
-				<label for="hobby">爱好：</label>
-				<input type="checkbox"/>运动</input>
-				<input type="checkbox"/>艺术</input>
-				<input type="checkbox"/>科学</input>
-				<label for="description">个人描述：</label>
-				<textarea placeholder="这是一个多行输入框，输入您的个人描述"></textarea>
-				<input type="submit" value="确认提交"/>
-			</form>
+		    <form action="">
+		        <div>
+		            <label for="email" class="left">请输入邮箱地址</label>
+		            <input class="right" type="email" id="email" placeholder="这是一个文本输入框">
+		            <div  class="placeholder">邮箱地址请按要求格式输入</div>
+		        </div>
+		        <div>
+		            <label for="" class="left">请输入密码</label>
+		            <input class="right" type="password" placeholder="这是一个文本输入框" value="12345678">
+		        </div>
+		        <div>
+		            <label for="" class="left">请重复输入密码</label>
+		            <input class="right"  type="password" placeholder="这是一个文本输入框" value="12345678">
+		            <div class="placeholder">密码请为6-16位英文数字</div>
+		        </div>
+		        <div>
+		            <label class="left">性别</label>
+		            <input class="right" type="radio" value="1" name="gender" id="male" checked><label for="male">男</label>
+		            <input type="radio" value="2" name="gender" id="female"><label for="female">女</label>
+		        </div>
+		        <div>
+		            <label for="" class="left">城市</label>
+		            <select class="right" name="" id="">
+		                <option value="北京">北京</option>
+		            </select>
+		        </div>
+		        <div>
+		            <label for="" class="left">爱好</label>
+		            <input class="right" type="checkbox" id="sport"><label for="sport">运动</label>
+		            <input type="checkbox" id="art"><label for="art">艺术</label>
+		            <input type="checkbox" id="science"><label for="science">科学</label>
+		        </div>
+		        <div>
+		            <label for="description" class="left">个人描述</label>
+		            <textarea class="right" name="" id="description" cols="30" rows="5">这是一个多行输入框，输入您的个人描述</textarea>
+		        </div>
+		        <input type="submit" value="确认提交">
+		    </form>
 		</aside>
 
 		<footer>

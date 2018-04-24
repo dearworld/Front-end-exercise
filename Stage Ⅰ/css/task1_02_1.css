@@ -121,18 +121,57 @@ article table tr:last-child{
 }
 
 /*侧栏部分*/
-aside h3{
+aside h3 {
 	border-left: 3px solid #ccc;
 	padding: 1px 0 1px 10px;
 	margin-bottom: 10px;
 }
 
-aside form{
-	
+aside form div {
+	margin-top: 5px;
+	margin-bottom: 10px;
 }
 
+aside form .left {
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+}
 
+aside form .left:last-of-type {
+	vertical-align: top;
+}
 
+aside form .right {
+	margin-left: 5px;
+}
+
+aside form .placeholder {
+	margin-left: 40%;
+	margin-left: calc(40% + 10px);
+	color: #aaa;
+	font-size: 14px;
+}
+
+aside form input[type="email"],
+aside form input[type="password"],
+aside form textarea,
+aside form select {
+	padding: 3px;
+}
+
+aside form input[type="submit"] {
+	width: 100%;
+	padding: 10px 0 10px 0;
+	border: 1px solid blue;
+	border-radius: 5px;
+	background-color: blue;
+	color: #fff;
+}
+
+aside form textarea {
+	width: 55%;
+}
 
 /*底部部分*/
 footer {
