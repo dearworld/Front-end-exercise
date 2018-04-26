@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				height: 35px;
+				margin: 5px 10px 0 0;
+				background-color: red;
+				font-size: 16px;
+				color: #fff;
+				float: left;
+			}
+			.box >span{
+				display:block;
+				line-height: 35px;
+				height: 100%;
+				padding: 0 10px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="num"/>
+			<button id="leftInput">左侧入</button>
+			<button id="rightInput">右侧入</button>
+			<button id="leftOutput">左侧出</button>
+			<button id="rightOutput">右侧出</button>
+		</div>
+		<div id="container">
+			
+		</div>
+		<script type="text/javascript">
+			var $ = function(id){
+				return document.getElementById(id);
+			}
+			function createEle(ele){
+				return document.createElement(ele);
+			}
+			var container = $('container');
+			var leftInput = $('leftInput');
+			var rightInput = $('rightInput');
+			var leftOutput = $('leftOutput');
+			var rightOutput = $('rightOutput');
+			
+			function checkNum(num){
+				var numReg = /[\d*]/;
+				if(!numReg.test(num)){
+					alert('请输入数字');
+					return false;
+				}
+				return true;
+			}
+			
+			leftInput.onclick = function(){
+				var num = $('num').value.trim();
+				if(!checkNum(num)){
+					return;
+				}
+				var div = createEle('div');
+				//添加内容
+				div.innerHTML = '<span>'+num+'</span>';
+				//添加属性
+				div.setAttribute('class','box');
+				container.insertBefore(div,container.childNodes[0]);
+			}
+			
+			rightInput.onclick = function(){
+				var num = $('num').value.trim();
+				if(!checkNum(num)){
+					return;
+				}
+				var div = createEle('div');
+				//添加内容
+				div.innerHTML = '<span>'+num+'</span>';
+				//添加属性
+				div.setAttribute('class','box');
+				container.appendChild(div);
+			}
+			
+			leftOutput.onclick = function(){
+				var firstDiv = container.firstElementChild;
+				if(firstDiv != null){
+					var text = firstDiv.innerText;
+					alert(text);
+					container.removeChild(firstDiv);
+				}else{
+					alert('没有可出的元素');
+				}
+			}
+			
+			rightOutput.onclick = function(){
+				var lastDiv = container.lastElementChild;
+				if(lastDiv != null){
+					var text = lastDiv.innerText;
+					alert(text);
+					container.removeChild(lastDiv);
+				}else{
+					alert('没有可出的元素');
+				}
+			}
+			
+			container.addEventListener('click',function(e){
+				var e = e||window.event;
+				var target = e.target || e.srcElement;
+				container.removeChild(target.parentElement);
+			})
+		</script>
+	</body>
+
+</html>
