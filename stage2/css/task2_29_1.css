@@ -1,0 +1,13 @@
+.container{
+	position: absolute;
+	left: 40%;
+	top: 10%;
+	width: 40%;
+}
+.name{
+	float: left;
+}
+.input{
+	margin-left: 10px;
+}
+.clearfix{*zoom:1}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}
